@@ -1,0 +1,155 @@
+@use "sass:math";
+
+@import "../variables.scss";
+@import "./spacing";
+
+@function rem($pixels, $context: $baseFontSizePx) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return math.div($pixels, $context) * 1rem;
+}
+@mixin make-row($gutter: $grid-gutter-width) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -$gutter * 0.5;
+  margin-left: -$gutter * 0.5;
+}
+// For each breakpoint, define the maximum width of the container in a media query
+@mixin make-container-max-widths-important(
+  $max-widths: $container-max-widths,
+  $breakpoints: $grid-breakpoints
+) {
+  @each $breakpoint, $container-max-width in $max-widths {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+    .col#{$infix}-reset-width {
+      @include media-breakpoint-up($breakpoint, $breakpoints) {
+        max-width: $container-max-width !important;
+      }
+    }
+  }
+}
+
+// For each breakpoint, define the maximum width of the container in a media query
+@mixin make-row-grid($breakpoints: $grid-breakpoints) {
+  @each $breakpoint in $breakpoints {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+    .row#{$infix}-enable {
+      @include make-row();
+    }
+  }
+}
+
+// Flexbox.
+@mixin flexbox {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin flex-direction($direction: row) {
+  -webkit-box-orient: $direction;
+  -webkit-box-direction: $direction;
+  -webkit-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+  flex-direction: $direction;
+}
+
+@mixin flex-wrap($wrap: nowrap) {
+  -webkit-flex-wrap: $wrap;
+  -moz-flex-wrap: $wrap;
+  -ms-flex-wrap: $wrap;
+  flex-wrap: $wrap;
+}
+
+@mixin justify-content($justify: flex-start) {
+  -webkit-box-pack: $justify;
+  -webkit-justify-content: $justify;
+  -ms-justify-content: $justify;
+  -ms-flex-pack: $justify;
+  justify-content: $justify;
+}
+
+@mixin align-items($align: stretch) {
+  -webkit-align-items: $align;
+  -ms-align-items: $align;
+  -ms-flex-align: $align;
+  align-items: $align;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin transform($transforms) {
+  -webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  transform: $transforms;
+}
+
+@function default-if-null($value, $default: inherit) {
+  @if $value {
+    @return $value;
+  } @else {
+    @return $default;
+  }
+}
+
+@mixin calendar-color-theme($theme-list) {
+  @each $code, $item in $theme-list {
+    $is-gradient: map-get($item, "is-gradient");
+    $main: map-get($item, main);
+    $secondary: map-get($item, "secondary");
+    $tertiary: map-get($item, "tertiary");
+    $text-color: map-get($item, "text");
+    $icon-color: map-get($item, "icon");
+    $text-color2: default-if-null(map-get($item, "alt-text"), $text-color);
+    $icon-color2: default-if-null(map-get($item, "alt-icon"), $icon-color);
+    $background: inherit;
+    $background-color: inherit;
+    .color-code-#{$code} {
+      color: default-if-null($text-color, inherit);
+      border-color: default-if-null($main, inherit);
+      @if (default-if-null($is-gradient, "false") == "true") {
+        background-color: none !important;
+        background: repeating-linear-gradient(
+          132deg,
+          transparent,
+          transparent 10px,
+          default-if-null($secondary, inherit) 10px,
+          default-if-null($secondary, inherit) calc(2 * 10px)
+        ) !important;
+      } @else {
+        background: default-if-null($secondary, inherit);
+      }
+      &.full-bg {
+        background: default-if-null($main, inherit) !important;
+        color: $text-color2;
+        .icon-theme {
+          color: $text-color2;
+        }
+      }
+      .icon-theme {
+        color: default-if-null($icon-color, $text-color);
+      }
+    }
+  }
+}

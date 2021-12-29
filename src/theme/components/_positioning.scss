@@ -1,0 +1,165 @@
+@import "../variables.scss";
+@import "../mixins/mixins";
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-relative {
+  position: relative !important;
+}
+
+.position-fixed {
+  position: fixed;
+}
+.position-fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  @media (min-width: $desktop-width) {
+    width: 634px !important;
+    left: 50%;
+    right: 50%;
+    @include transform(translateX(-50%));
+  }
+}
+
+.position-sticky {
+  position: sticky !important;
+}
+
+.absolute-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.absolute-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.left-0 {
+  left: 0;
+}
+
+.center-pos-fixed {
+  left: calc(50% - 315px);
+}
+
+.left-8-perc {
+  left: 8%;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.top-20-perc {
+  top: 20%;
+}
+
+.top-35-perc {
+  top: 35%;
+}
+
+.top-230 {
+  top: rem(230);
+}
+
+.bottom-0 {
+  bottom: 0;
+}
+
+.bottom-83 {
+  bottom: rem(83);
+}
+
+.bottom-n64 {
+  bottom: rem(-64);
+}
+
+.bottom-24 {
+  bottom: rem(24);
+}
+
+.bottom-16 {
+  bottom: rem(16);
+}
+
+.right-0 {
+  right: 0;
+}
+
+.right-1 {
+  right: 1;
+}
+
+.right-24 {
+  right: 24;
+}
+
+.left-36 {
+  left: rem(36);
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.z-index-9999 {
+  z-index: 9999 !important;
+}
+.z-index-2 {
+  z-index: 2 !important;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+.custom-center-bottom {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  right: 0;
+  transform: translateX(-50%);
+}
+
+@media (min-width: $desktop-width) {
+  .float-lg-left {
+    float: left !important;
+  }
+
+  .float-lg-right {
+    float: right !important;
+  }
+
+  .bottom-lg-240 {
+    bottom: rem(240) !important;
+  }
+
+  .position-lg-absolute {
+    position: absolute;
+  }
+}

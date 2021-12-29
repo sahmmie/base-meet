@@ -1,0 +1,50 @@
+@import "../variables.scss";
+@import "../mixins/mixins";
+
+.white {
+  color: #fff !important;
+}
+
+.black-color {
+  color: #000 !important;
+}
+
+.color-grey-1 {
+  color: $grey-1;
+  --color: $grey-1;
+}
+
+.red-bg {
+  background: red !important;
+}
+
+.pink-bg {
+  background: pink !important;
+}
+
+.white-bg {
+  background: white;
+  --background: white;
+}
+
+.schedule-private-bg-color {
+  background-color: #f7edff !important;
+}
+
+.isBreakTime-bg-color {
+  background-color: #fff !important;
+}
+
+.bg-teal-blue {
+  background: $teal-blue;
+  --background: $teal-blue;
+}
+
+@media (min-width: $desktop-width) {
+  .web-white-page {
+    --background: var(--app-white-color, #ffffff);
+    --ion-background-color: var(--background, #ffffff);
+    --ion-background-color-rgb: 255, 255, 255;
+    background: $white;
+  }
+}

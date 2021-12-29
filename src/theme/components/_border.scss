@@ -1,0 +1,25 @@
+@import "../variables.scss";
+@import "../mixins/mixins";
+
+.radius-0 {
+  border-radius: 0;
+}
+
+.radius-40 {
+  border-radius: rem(40);
+}
+
+.radius-6{
+  border-radius: rem(6);
+}
+
+.radius-50-perc{
+  border-radius: 50%;
+}
+
+.border-grey-1 {
+  border-color: #ACA8A8;
+  --border-color: $grey-1;
+  border-width: 1px;
+  border-style: solid;
+}
