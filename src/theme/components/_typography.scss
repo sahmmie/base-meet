@@ -2,7 +2,7 @@
 @import "../mixins/mixins";
 
 $font-size-base: 1rem;
-$font-family-base: var(--ion-font-roboto-family);
+$font-family-base: var(--ion-font-montserrat-family);
 $poppins-family-font: var(--ion-font-poppins-font);
 
 .poppings-family-font {
@@ -34,12 +34,12 @@ $poppins-family-font: var(--ion-font-poppins-font);
 }
 
 .text-weight-bold {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .text-small {
-  font-size: rem(13) !important;
-  line-height: rem(16) !important;
+  font-size: rem(10) !important;
+  line-height: rem(12) !important;
 }
 
 .text-x-small {
