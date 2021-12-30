@@ -4,7 +4,7 @@
       <ion-button routerLink="/core" class="pr-24">
         <ion-icon class="icon-20" slot="icon-only" name="icon-back"></ion-icon>
       </ion-button>
-      <ion-text>{{ "pav-azdu-qra" }}</ion-text>
+      <ion-text>{{ meetingCode }}</ion-text>
     </ion-buttons>
     <ion-buttons slot="end">
       <ion-button class="mr-8">
@@ -39,18 +39,18 @@
     </ion-item>
 
     <ion-item lines="none" class="ion-no-padding pt-16">
-      <div class="border-box-1-grey py-8 pl-10 flex ion-align-items-center">
-        <ion-text class="text-small"> base.meet/pav-azdu-qra </ion-text>
+      <ion-button color="none" (click)="copyLink()" class="border-box-1-grey py-8 pl-10 flex ion-align-items-center ion-no-padding text-small color-dark">
+       {{meetingLink}}
         <ion-icon
-          class="icon-20 ml-108 pr-12"
-          slot="icon-only"
+          class="icon-20 ml-108 pr-12 color-dark"
+          slot="end"
           name="icon-copy"
         ></ion-icon>
-      </div>
+      </ion-button>
     </ion-item>
 
     <ion-item lines="none" class="ion-no-padding pt-16">
-      <ion-button color="none" class="py-8 bg-teal-blue pl-8 pr-32 radius-6">
+      <ion-button (click)="shareMeetingLink()" color="none" class="py-8 bg-teal-blue pl-8 pr-32 radius-6">
         <ion-icon class="mr-14" slot="start" name="icon-share"></ion-icon>
         Share link
       </ion-button>

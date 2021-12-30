@@ -9,6 +9,11 @@
   color: #000 !important;
 }
 
+.color-dark {
+  color: $dark !important;
+  --color: $dark !important;
+}
+
 .color-grey-1 {
   color: $grey-1;
   --color: $grey-1;
