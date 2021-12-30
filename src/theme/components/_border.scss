@@ -9,17 +9,23 @@
   border-radius: rem(40);
 }
 
-.radius-6{
+.radius-6 {
   border-radius: rem(6);
 }
 
-.radius-50-perc{
+.radius-50-perc {
   border-radius: 50%;
 }
 
 .border-grey-1 {
-  border-color: #ACA8A8;
+  border-color: #aca8a8;
   --border-color: $grey-1;
   border-width: 1px;
   border-style: solid;
+}
+
+.border-box-1-grey {
+  border: 1px solid #c4c4c4;
+  box-sizing: border-box;
+  border-radius: 5px;
 }

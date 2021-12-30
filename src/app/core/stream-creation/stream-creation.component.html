@@ -1,0 +1,108 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/core" class="pr-24">
+        <ion-icon class="icon-20" slot="icon-only" name="icon-back"></ion-icon>
+      </ion-button>
+      <ion-text>{{ "pav-azdu-qra" }}</ion-text>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button class="mr-8">
+        <ion-icon
+          class="icon-20"
+          slot="icon-only"
+          name="icon-refresh"
+        ></ion-icon>
+      </ion-button>
+      <ion-button class="mr-8">
+        <ion-icon
+          class="icon-20"
+          slot="icon-only"
+          name="icon-regularspeaker"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="px-16 h-100">
+    <ion-item lines="none" class="ion-no-padding pt-32 pb-16">
+      <ion-text class="w-100 s14-h16">
+        You’re the only one who can see this
+      </ion-text>
+    </ion-item>
+
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-text class="w-100 text-small">
+        Share the link with the base
+      </ion-text>
+    </ion-item>
+
+    <ion-item lines="none" class="ion-no-padding pt-16">
+      <div class="border-box-1-grey py-8 pl-10 flex ion-align-items-center">
+        <ion-text class="text-small"> base.meet/pav-azdu-qra </ion-text>
+        <ion-icon
+          class="icon-20 ml-108 pr-12"
+          slot="icon-only"
+          name="icon-copy"
+        ></ion-icon>
+      </div>
+    </ion-item>
+
+    <ion-item lines="none" class="ion-no-padding pt-16">
+      <ion-button color="none" class="py-8 bg-teal-blue pl-8 pr-32 radius-6">
+        <ion-icon class="mr-14" slot="start" name="icon-share"></ion-icon>
+        Share link
+      </ion-button>
+    </ion-item>
+
+    <ion-item
+      lines="none"
+      class="ion-no-padding pt-56 ion-justify-content-center w-100"
+    >
+      <div class="wh-250 border-box-1-grey bg-grey mr-auto ml-auto"></div>
+    </ion-item>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-item lines="none" class="ion-no-padding w-100 pb-18 px-16">
+    <ion-buttons class="ion ion-justify-content-between flex w-100 pl-4">
+      <ion-button
+        shape="round"
+        class="bg-green radius-50-perc ion-no-padding wh-60"
+      >
+        <ion-icon
+          class="icon-24 color-white"
+          slot="icon-only"
+          name="videocam"
+        ></ion-icon>
+      </ion-button>
+
+      <ion-button class="bg-grey radius-50-perc ion-no-padding wh-60">
+        <ion-icon
+          class="icon-24"
+          slot="icon-only"
+          name="camera-reverse"
+        ></ion-icon>
+      </ion-button>
+
+      <ion-button (click)="micOff = !micOff" class="bg-grey radius-50-perc ion-no-padding wh-60">
+        <ion-icon *ngIf="!micOff" class="icon-24" slot="icon-only" name="mic"></ion-icon>
+        <ion-icon *ngIf="micOff" class="icon-24" slot="icon-only" name="mic-off"></ion-icon>
+      </ion-button>
+
+      <ion-button
+        disabled="true"
+        class="bg-grey radius-50-perc ion-no-padding wh-60"
+      >
+        <ion-icon
+          class="icon-24"
+          slot="icon-only"
+          name="ellipsis-vertical"
+        ></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+  </ion-item>
+</ion-footer>

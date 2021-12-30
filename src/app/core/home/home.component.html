@@ -1,30 +1,43 @@
-<div class="flex ion-justify-content-between pt-24 pb-18">
-  <ion-button class="bg-teal-blue radius-6 py-8 px-16">Live stream</ion-button>
-  <ion-button class="white-bg color-grey-1 radius-6 py-8 px-16 border-grey-1"
-    >Share video</ion-button
-  >
-</div>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button class="color-grey-1"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ folder }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="px-16">
+    <div class="flex ion-justify-content-between pt-24 pb-18">
+      <ion-button color="none" [routerLink]="'stream-creation'" class="bg-teal-blue radius-6 py-8 px-16">Live stream</ion-button>
+      <ion-button color="none" class="white-bg color-grey-1 radius-6 py-8 px-16 border-grey-1"
+        >Base Meet</ion-button
+      >
+    </div>
 
-<ion-item lines="none" class="ion-no-padding pb-16">
-  <ion-text class="text-center w-100 s16-h19 text-weight-bold"> Start Live Recording </ion-text>
-</ion-item>
+    <ion-item lines="none" class="ion-no-padding pb-16">
+      <ion-text class="text-center w-100 s16-h19 text-weight-bold"> Start Live Recording </ion-text>
+    </ion-item>
 
-<ion-item lines="none" class="ion-no-padding pb-38">
-  <ion-text class="w-100 ion-text-center text-small"> Tap or click live stream to start recording </ion-text>
-</ion-item>
+    <ion-item lines="none" class="ion-no-padding pb-38">
+      <ion-text class="w-100 ion-text-center text-small"> Tap or click live stream to start recording </ion-text>
+    </ion-item>
 
-<div class="pb-36 text-center">
-  <ion-icon
-    name="ellipsefly-icon"
-    class="lg-card bg-teal-blue p-32 radius-50-perc"
-    slot="icon-only"
-  ></ion-icon>
-</div>
+    <div class="pb-36 text-center">
+      <ion-icon
+        name="ellipsefly-icon"
+        class="lg-card bg-teal-blue p-32 radius-50-perc"
+        slot="icon-only"
+      ></ion-icon>
+    </div>
 
-<ion-item lines="none" class="ion-no-padding pb-16">
-  <ion-text class="text-center w-100 s16-h19 text-weight-bold"> Get a link you can share </ion-text>
-</ion-item>
+    <ion-item lines="none" class="ion-no-padding pb-16">
+      <ion-text class="text-center w-100 s16-h19 text-weight-bold"> Get a link you can share </ion-text>
+    </ion-item>
 
-<ion-item lines="none" class="ion-no-padding">
-  <ion-text class="w-100 text-center text-small"> Tap share link to see all recorded videos and share </ion-text>
-</ion-item>
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-text class="w-100 text-center text-small"> Tap share link to see all recorded videos and share </ion-text>
+    </ion-item>
+
+  </div>
+</ion-content>

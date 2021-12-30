@@ -68,6 +68,12 @@ ion-icon {
     max-width: rem(8);
   }
 
+  &.icon-14-9 {
+    font-size: rem(14);
+    height: rem(9);
+    width: rem(14);
+  }
+
   // Custom icon
   &.phone-icon {
     height: rem(120);

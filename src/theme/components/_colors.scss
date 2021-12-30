@@ -1,7 +1,7 @@
 @import "../variables.scss";
 @import "../mixins/mixins";
 
-.white {
+.color-white {
   color: #fff !important;
 }
 
@@ -12,6 +12,21 @@
 .color-grey-1 {
   color: $grey-1;
   --color: $grey-1;
+}
+
+.bg-grey-1 {
+  background-color: $grey-1;
+  --background-color: $grey-1;
+}
+
+.bg-grey {
+  background-color: $grey;
+  --background-color: $grey;
+}
+
+.bg-green {
+  background-color: $green;
+  --background-color: $green;
 }
 
 .red-bg {
