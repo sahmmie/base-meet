@@ -6,7 +6,20 @@ ion-button {
   padding-inline-start: 0;
   padding-inline-end: 0;
   height: fit-content;
-
+  --background-activated: transparent;
+  --background-hover: var(--ion-color-primary-contrast, #fff);
+  --background-focused: var(--ion-color-primary-contrast, #fff);
+  --background-activated-opacity: 0;
+  --background-focused-opacity: 0.24;
+  --background-hover-opacity: 0.08;
+  --box-shadow: none;
   &.lg-btn {
   }
+  &.sm-btn {
+    --vertical-align: middle;
+    --padding-bottom: 8px !important;
+    --padding-top: 8px !important;
+    --padding-end: 16px !important;
+    --padding-start: 16px !important;
+ }
 }

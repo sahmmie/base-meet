@@ -3,13 +3,17 @@
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
         <ion-list id="inbox-list">
-          <ion-list-header class="pt-32">Live Stream</ion-list-header>
+          <ion-list-header class="pt-32 w-100">
+            <ion-text class="w-100 text-weight-bold s20-h24">Live Stream</ion-text>
+          </ion-list-header>
           <hr>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item [disabled]="p.disabled" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
-              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
-              <ion-label>{{ p.title }}</ion-label>
-            </ion-item>
+            <ion-item-divider class="w-100">
+              <ion-item class="w-100" [disabled]="p.disabled" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+                <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+                <ion-label>{{ p.title }}</ion-label>
+              </ion-item>
+            </ion-item-divider>
             <hr>
           </ion-menu-toggle>
         </ion-list>
